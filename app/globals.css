@@ -1171,8 +1171,9 @@ footer {
 
 
 @media (max-width: 360px) {
-  button:not(.hamburger-btn) {
-    min-width: 160px;
+  button:not(.hamburger-btn):not(.testimonials-section button):not(.page-number) {
+    min-width: auto;
+    padding: 7px 20px 6px;
   }
 }
 

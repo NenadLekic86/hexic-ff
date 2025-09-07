@@ -13,7 +13,7 @@ const OurMetrics = () => {
                     Our Metrics
                 </h2>
             </div>
-            <div className="metrics-container relative my-20">
+            <div className="metrics-container relative pt-10 pb-20">
                 <DynamicMetrics />
 
                 <div className="historical-transactions-container relative mt-12">

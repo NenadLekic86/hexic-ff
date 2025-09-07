@@ -197,7 +197,7 @@ const HowItWorks = () => {
   }, []);
 
   return (
-    <section className="howitworks-section relative mt-24 md:mt-44" ref={containerRef}>
+    <section className="howitworks-section relative mt-24 mb-10 md:mt-44 md:mb-0" ref={containerRef}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-30">
         {/* Whale icon */}
         <div className="whale-icon flex items-center justify-center">
