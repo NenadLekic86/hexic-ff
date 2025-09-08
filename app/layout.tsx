@@ -18,7 +18,21 @@ export default function RootLayout({
       <head>
         <link
           rel="preload"
+          href="/fonts/AlbertSans-Regular.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
           href="/fonts/AlbertSans-SemiBold.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/AlbertSans-Bold.ttf"
           as="font"
           type="font/ttf"
           crossOrigin="anonymous"

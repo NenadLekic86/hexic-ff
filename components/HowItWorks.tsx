@@ -239,7 +239,7 @@ const HowItWorks = () => {
                 <div className="num-icon rounded-4xl bg-[#F8B30D] w-[72px] h-[72px] flex items-center justify-center shadow-[0_0_0_6px_rgba(13,74,121,0.1)] mx-auto md:ml-0 mb-5">
                   <p className="text-3xl md:text-4xl font-bold text-[#031A3E]">{step.number}</p>
                 </div>
-                <h3 className="my-5 text-2xl md:text-3xl font-bold text-white">{step.title}</h3>
+                <h3 className="my-5 text-2xl md:text-3xl font-bold text-white uppercase">{step.title}</h3>
                 <p className="text-lg leading-relaxed text-white/80">{step.description}</p>
               </div>
             </div>
