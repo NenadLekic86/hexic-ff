@@ -54,7 +54,7 @@ const HistoricalTransactions = () => {
   const [activeFilter, setActiveFilter] = useState('L1 Swaps');
   const [totalPages, setTotalPages] = useState(1);
   
-  const TRANSACTIONS_PER_PAGE = 8;
+  const TRANSACTIONS_PER_PAGE = 5;
 
   const filters = [
     'All', 'L1 Swaps', 'Secure', 'Trade Swaps', 'Synth Swaps', 

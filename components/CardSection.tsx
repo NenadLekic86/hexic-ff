@@ -230,7 +230,7 @@ const CardSection = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-30">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 items-end gap-8 md:gap-5">
                 <div className="card_1">
-                    <div className="bubble-one flex items-center justify-center hidden md:block">
+                    <div className="bubble-one flex items-center justify-center hidden md:flex">
                         <svg ref={bubbleOneRef} xmlns="http://www.w3.org/2000/svg" width="250" height="300" viewBox="0 0 152 242" fill="none">
                         <path d="M60.4844 79.6841C60.4844 89.6941 68.6004 97.8101 78.6094 97.8101C88.6184 97.8101 96.7344 89.6941 96.7344 79.6841C96.7344 69.6741 88.6184 61.5601 78.6094 61.5601C68.6004 61.5601 60.4844 69.6751 60.4844 79.6841Z" fill="#196DA7" stroke="#A3D9F4" strokeLinecap="round" strokeLinejoin="round"/>
                         <g style={{ opacity: 0.6 }}>
@@ -356,7 +356,7 @@ const CardSection = () => {
                 </div>
                 </div>
                 <div className="card_2">
-                    <div className="littleCaptain_icon flex items-center justify-center hidden md:block">
+                    <div className="littleCaptain_icon flex items-center justify-center hidden md:flex">
                         <Image className="relative top-20 -z-[1]" src="/littleCaptain.svg" alt="little captain icon" width={276} height={392} />
                     </div>
                     <div className="card rounded-4xl bg-white px-6 pt-7 pb-10 shadow-[0_0_0_6px_rgba(13,74,121,0.1)] min-h-[270px]">
@@ -374,7 +374,7 @@ const CardSection = () => {
                     </div>
                 </div>
                 <div className="card_3">
-                    <div className="bubble-two flex items-center justify-center hidden md:block">
+                    <div className="bubble-two flex items-center justify-center hidden md:flex">
                          <svg ref={bubbleTwoRef} xmlns="http://www.w3.org/2000/svg" width="250" height="300" viewBox="0 0 162 245" fill="none">
                             <path d="M70.5312 41.329C70.5312 48.531 76.3703 54.37 83.5713 54.37C90.7723 54.37 96.6113 48.531 96.6113 41.329C96.6113 34.127 90.7723 28.29 83.5713 28.29C76.3703 28.29 70.5312 34.128 70.5312 41.329Z" fill="#196DA7" stroke="#A3D9F4" strokeLinecap="round" strokeLinejoin="round"/>
                             <g style={{ opacity: 0.6 }}>

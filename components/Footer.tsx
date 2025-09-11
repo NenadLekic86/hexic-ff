@@ -28,7 +28,7 @@ const Footer = () => {
             {/* Left: Logo */}
             <div className="basis-full md:basis-3/12 pb-8 md:pb-0">
               <Link href="/" className="text-base font-semibold tracking-tight">
-                <Image src="/logo.svg" alt="Hexic FF" width={171} height={36} />
+                <Image src="/logo.svg" alt="Hexic FF" width={200} height={51} />
               </Link>
             </div>
             {/* Footer Links */}
