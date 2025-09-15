@@ -5,6 +5,8 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Lottie from "lottie-react";
+import octopusAnimationData from "../public/lottie/octopus.json";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -15,7 +17,7 @@ const HowItWorks = () => {
   const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
   const whaleRef = useRef<HTMLImageElement>(null);
-  const octopusRef = useRef<HTMLImageElement>(null);
+  const octopusRef = useRef<HTMLDivElement>(null);
 
   // Dynamic data for how it works steps
   const howItWorksSteps = [
@@ -247,14 +249,18 @@ const HowItWorks = () => {
             {/* Show octopus after step 2 (between steps 2 and 3) */}
             {index === 1 && (
               <div className="octopus-icon relative flex items-center justify-center my-16 md:my-24">
-                <Image 
+                <div 
                   ref={octopusRef}
-                  className="md:absolute md:-right-10 md:-top-36 w-[271px] md:w-[400px] h-auto" 
-                  src="/octopus.svg" 
-                  alt="octopus icon" 
-                  width={464} 
-                  height={304} 
-                />
+                  className="md:absolute md:-right-10 md:-top-36 w-[271px] md:w-[400px]"
+                  style={{ aspectRatio: '464/304' }}
+                >
+                  <Lottie 
+                    animationData={octopusAnimationData}
+                    loop={true}
+                    autoplay={true}
+                    style={{ width: '100%', height: '100%' }}
+                  />
+                </div>
               </div>
             )}
           </React.Fragment>
