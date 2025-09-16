@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useRef, useState, useEffect } from "react";
-import Image from "next/image";
 import { PrimaryBtnLink } from "@/components/Buttons";
 
 export default function NavBar() {
@@ -10,36 +9,18 @@ export default function NavBar() {
   const [isInnerPageOpen, setIsInnerPageOpen] = useState(false);
   const [hoverInnerPage, setHoverInnerPage] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isScaling, setIsScaling] = useState(false);
 
   const innerPageTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const scaleTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       setIsScrolled(scrollTop > 0);
-      
-      // Trigger scale animation on any scroll
-      setIsScaling(true);
-      
-      // Clear existing timer
-      if (scaleTimer.current) {
-        clearTimeout(scaleTimer.current);
-      }
-      
-      // Set timer to return to normal scale after 0.3 seconds
-      scaleTimer.current = setTimeout(() => {
-        setIsScaling(false);
-      }, 300);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      if (scaleTimer.current) {
-        clearTimeout(scaleTimer.current);
-      }
     };
   }, []);
 
@@ -86,34 +67,21 @@ export default function NavBar() {
       )}
       
       <nav className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 relative">
-        <div className={`flex items-center justify-between transition-all duration-300 ${
+        <div className={`flex items-center justify-between relative transition-all duration-300 ${
           isScrolled ? 'h-16' : 'h-19'
         }`}>
           {/* Left: Logo */}
-          <div className="flex items-center">
+          <div className="flex items-center md:flex-row md:justify-start md:gap-3">
             <Link href="/" className="text-base font-semibold tracking-tight">
-              {/* <Image 
-                src="/logo.svg" 
-                alt="Hexic FF" 
-                width={280} 
-                height={58} 
-                className={`transition-all duration-300 ${
-                  isScrolled ? 'scale-90' : 'scale-100'
-                }`}
-              /> */}
-              <div className="flex flex-row flex-nowrap items-center justify-start gap-3">
+              <div className="flex flex-row flex-nowrap items-center justify-start gap-3 md:gap-3 md:justify-start">
                   {/* Logo Head */}
                   <svg 
                     xmlns="http://www.w3.org/2000/svg"  
-                    width="55" 
-                    height="58" 
+                    width={isScrolled ? "37" : "44"}
+                    height={isScrolled ? "39" : "46"} 
                     viewBox="0 0 55 58" 
                     fill="none"
-                    className={`${
-                      isScaling 
-                        ? 'logo-scale-up' 
-                        : 'logo-scale-normal'
-                    }`}
+                    className="transition-all duration-300 md:order-1"
                   >
                     <rect width="55" height="58" fill="url(#pattern0_131_1596)"/>
                     <defs>
@@ -124,7 +92,14 @@ export default function NavBar() {
                     </defs>
                   </svg>
                   {/* Logo Title */}
-                  <svg xmlns="http://www.w3.org/2000/svg"  width="210" height="40" viewBox="0 0 210 40" fill="none">
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg"  
+                    width={isScrolled ? "143" : "168"} 
+                    height={isScrolled ? "27" : "32"} 
+                    viewBox="0 0 210 40" 
+                    fill="none"
+                    className="transition-all duration-300 md:order-2 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:static md:translate-x-0 md:translate-y-0 md:left-auto"
+                  >
                     <rect width="210" height="40" fill="url(#pattern0_131_1597)"/>
                     <defs>
                     <pattern id="pattern0_131_1597" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -192,7 +167,7 @@ export default function NavBar() {
 
           {/* Right: Button Link (Desktop) */}
           <div className="hidden md:flex">
-            <PrimaryBtnLink href="#" className="!px-[20px]">
+            <PrimaryBtnLink href="#" className="!px-[20px] !min-w-[160px] !h-[50px]">
               Start Swapping
             </PrimaryBtnLink>
           </div>
