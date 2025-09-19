@@ -3,6 +3,8 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import Lottie from 'lottie-react'
+import treasureChestAnimation from '../public/lottie/TreasureChest_lottie.json'
 
 const Footer = () => {
   return (
@@ -19,7 +21,12 @@ const Footer = () => {
               </p>
             </div>
             <div className="basis-full basis-1/2 flex items-center justify-center">
-              <Image src="/about-icon.webp" alt="a chest full of gold" width={359} height={370} />
+              <Lottie 
+                animationData={treasureChestAnimation}
+                style={{ width: 359, height: 370 }}
+                loop={true}
+                autoplay={true}
+              />
             </div>
           </div>
 
