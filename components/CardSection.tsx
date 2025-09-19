@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import Lottie from "lottie-react";
+import captainLottie from "../public/lottie/captain_lottie.json";
 
 const CardSection = () => {
   const waveRef = useRef<SVGGElement>(null);
@@ -339,7 +341,12 @@ const CardSection = () => {
                         </svg>
                     </div>
                     <div className="littleCaptain_icon flex items-center justify-center md:hidden">
-                        <Image className="relative top-20 -z-[1]" src="/littleCaptain.svg" alt="little captain icon" width={276} height={392} />
+                        <Lottie
+                            animationData={captainLottie}
+                            className="relative top-13 -z-[1] w-[276px] h-[392px]"
+                            loop={true}
+                            autoplay={true}
+                        />
                     </div>
                     <div className="card rounded-4xl bg-white px-6 pt-7 pb-10 shadow-[0_0_0_6px_rgba(13,74,121,0.1)] min-h-[270px]">
                     <div className="card-title flex items-center justify-start gap-4 mb-8">
@@ -357,7 +364,12 @@ const CardSection = () => {
                 </div>
                 <div className="card_2">
                     <div className="littleCaptain_icon flex items-center justify-center hidden md:flex">
-                        <Image className="relative top-20 -z-[1]" src="/littleCaptain.svg" alt="little captain icon" width={276} height={392} />
+                        <Lottie
+                            animationData={captainLottie}
+                            className="relative top-13 -z-[1] w-[276px] h-[392px]"
+                            loop={true}
+                            autoplay={true}
+                        />
                     </div>
                     <div className="card rounded-4xl bg-white px-6 pt-7 pb-10 shadow-[0_0_0_6px_rgba(13,74,121,0.1)] min-h-[270px]">
                         <div className="card-title flex items-center justify-start gap-4 mb-8">
