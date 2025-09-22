@@ -1,7 +1,6 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useState } from "react";
 import { PrimaryBtn, SecondaryBtn } from "@/components/Buttons";
 import heroAnimData from "@/public/lottie/hexic_ff_hero_lottie.json";
 
@@ -15,6 +14,16 @@ const Lottie = dynamic(() => import("lottie-react"), {
 });
 
 const Hero = () => {
+  const handleExploreClick = () => {
+    const cardsSection = document.querySelector('.cards-section');
+    if (cardsSection) {
+      cardsSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <section className="hero-section relative pb-20 lg:p-0">
         {/* Background Overlay */}
@@ -23,7 +32,7 @@ const Hero = () => {
         </div>
         
         {/* Lottie Animation - Outside Container, Viewport Aligned */}
-        <div className="absolute top-0 -right-3 w-full lg:w-1/2 h-auto flex items-start sm:items-center justify-center sm:justify-end z-10 hidden lg:flex">
+        <div className="absolute top-0 -right-3 w-full lg:w-1/2 h-auto items-start sm:items-center justify-center sm:justify-end z-10 hidden lg:flex">
             <div className="lottie-anim-container w-full max-w-lg lg:max-w-xl xl:max-w-2xl mt-0 relative">
                 <div className="w-full aspect-square">
                     <Lottie 
@@ -40,7 +49,7 @@ const Hero = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 lg:pt-64 lg:pb-44 relative z-20">
             <div className="flex flex-col lg:flex-row items-center justify-start">
                 <div className="basis-full md:basis-1/2 lg:order-2">
-                    <div className="relative top-0 -right-[20px] sm:-right-[80px] md:-right-[160px] w-full h-auto z-10 lg:hidden">
+                    <div className="relative top-0 -right-[25px] sm:-right-[80px] md:-right-[160px] w-full h-auto z-10 lg:hidden">
                         <div className="lottie-anim-container w-full max-w-lg lg:max-w-xl xl:max-w-2xl mt-0 relative">
                             <div className="w-full aspect-square">
                                 <Lottie 
@@ -69,7 +78,7 @@ const Hero = () => {
                         
                         <div className="flex items-center justify-center lg:justify-start gap-3 lg:gap-5 lg:flex-nowrap">
                             <PrimaryBtn>Start Swapping</PrimaryBtn>
-                            <SecondaryBtn>Explore</SecondaryBtn>
+                            <SecondaryBtn onClick={handleExploreClick}>Explore</SecondaryBtn>
                         </div>
                     </div>
                 </div>
