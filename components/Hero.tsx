@@ -15,12 +15,26 @@ const Lottie = dynamic(() => import("lottie-react"), {
 
 const Hero = () => {
   const handleExploreClick = () => {
-    const cardsSection = document.querySelector('.cards-section');
+    const cardsSection = document.querySelector('.cards-section') as HTMLElement;
     if (cardsSection) {
-      cardsSection.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
+      const isMobile = window.innerWidth < 1024; // lg breakpoint
+      
+      if (isMobile) {
+        // On mobile, scroll to position accounting for navbar height
+        const elementPosition = cardsSection.offsetTop;
+        const offsetPosition = elementPosition - 81; // 81px offset for navbar
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      } else {
+        // On desktop, use regular scrollIntoView
+        cardsSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
     }
   };
 
