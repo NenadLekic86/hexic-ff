@@ -58,7 +58,7 @@ export default function NavBar() {
   return (
     <header className={`sticky top-0 z-50 transition-all duration-500 ease-in-out ${
       isScrolled 
-        ? 'py-2 bg-[#40afec]/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(26,121,180,0.3),0_2px_8px_rgba(0,0,0,0.1)] border-b border-white/10' 
+        ? 'pt-3 pb-2 bg-[#40afec]/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(26,121,180,0.3),0_2px_8px_rgba(0,0,0,0.1)] border-b border-white/10' 
         : 'py-2 bg-[#40afec]'
     } ${isMobileOpen ? 'bg-[#40AFEC]' : ''}`}>
       {/* Subtle gradient overlay when scrolled */}
